@@ -140,9 +140,9 @@ def_main():
     for i in range(train_len):
         data.append(LabeledPoint(y_train[i], X_train[i]))
 
-
-    for trees in range(40, 41):
-        for depth in range(23, 24):
+    
+    for trees in range(1, 50):
+        for depth in range(1, 30):
             model = RandomForest.trainClassifier(sc.parallelize(data), 9, {}, trees, maxDepth = depth)
             a = []
             for i in X_test:
