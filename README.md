@@ -13,6 +13,6 @@ This project uses data from the Microsoft Malware Classification Challenge, whic
   8. Obfuscator.ACY 
   9. Gatak
   
-Here, 
+Documents are in the heaxadecimal format.  
 
 ## Getting Started 
