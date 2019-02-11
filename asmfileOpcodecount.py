@@ -38,13 +38,3 @@ for k in tempa:
             result.append(res)
     finalRes = fileName+":"+str(result)
     final.append(finalRes)
-
-
-
-import pickle
-with open('outfile','wb') as fp:
-    pickle.dump(result,fp)
-
-
-from pyspark.sql.types import StringType
-spark.createDataFrame(mylist, StringType()).show()
