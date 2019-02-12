@@ -17,6 +17,11 @@ Documents are in the heaxadecimal format.
 
 ## Getting Started 
 
+The following instructions will assist you get this project running on your local machine for developing and testing purpose.
+
+### Prerequisites
+
+
 
 ## Authors
 (Ordered alphabetically)
