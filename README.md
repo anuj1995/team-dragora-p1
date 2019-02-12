@@ -25,6 +25,8 @@ The following instructions will assist you get this project running on your loca
 
 ### Installation
 
+### Usage
+
 
 ## Authors
 (Ordered alphabetically)
