@@ -1,6 +1,6 @@
 # Malware Classification
 
-This repository contains the project-1 of Data Science Practicum (CSCI 8360) course at the University of Georgia,Spring 2019. This project aims at designing a large-scale classifier in Apache Spark that maximizes its classification accuracy against a testing dataset. In this project, [Random Forest Classifier] (https://spark.apache.org/docs/2.2.0/ml-classification-regression.html#random-forest-classifier) is implemented on Malware Classification.
+This repository contains the project-1 of Data Science Practicum (CSCI 8360) course at the University of Georgia,Spring 2019. This project aims at designing a large-scale classifier in Apache Spark that maximizes its classification accuracy against a testing dataset. In this project, [Random Forest Classifier](https://spark.apache.org/docs/2.2.0/ml-classification-regression.html#random-forest-classifier) is implemented on Malware Classification.
 
 This project uses data from the Microsoft Malware Classification Challenge, which consists of nearly half a terabyte of uncompressed data. There are no fewer than 9 classes of malware, and each instance of malware has one, and only one, of the following family categories:
   1. Ramnit
