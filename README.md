@@ -20,8 +20,9 @@ Documents are in the heaxadecimal format.
 The following instructions will assist you get this project running on your local machine for developing and testing purpose.
 
 ### Prerequisites
-[Google Cloud Platform](https://cloud.google.com/)
-[Apache Spark](http://spark.apache.org/)
+- [Google Cloud Platform](https://cloud.google.com/)
+
+- [Apache Spark](http://spark.apache.org/)
 
 
 ## Authors
