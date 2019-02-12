@@ -13,7 +13,13 @@ This project uses data from the Microsoft Malware Classification Challenge, whic
   8. Obfuscator.ACY 
   9. Gatak
   
-Documents are in the heaxadecimal format.  
+Documents are in the form of heaxadecimal binaries that include hash, .asm and .bytes file. The files in the files directory are: 
+- X_train_small.txt, y_train_small.txt
+- X_test_small.txt, y_test_small.txt 
+- X_train.txt, y_train.txt
+- X_test.txt
+
+Each X* contains a list of hashes, one per line. Each corresponding y* file is a list of integers, one per line, indicating the malware family to which the binary file with the corresponding hash belongs. 
 
 ## Getting Started 
 
