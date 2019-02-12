@@ -25,8 +25,8 @@ Documents are in the heaxadecimal format.
 - **Sumer Singh** - 
 - **Vishakha Atole** - 
 
-See the [CONTRIBUTORS](https://github.com/dsp-uga/team-dragora-p1/blob/master/CONTRIBUTORS.md) file for details.
+See the [CONTRIBUTORS.md](https://github.com/dsp-uga/team-dragora-p1/blob/master/CONTRIBUTORS.md) file for details.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/dsp-uga/team-dragora-p1/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/dsp-uga/team-dragora-p1/blob/master/LICENSE) file for details
