@@ -29,4 +29,4 @@ See the [CONTRIBUTORS](https://github.com/dsp-uga/team-dragora-p1/blob/master/CO
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md]() file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/dsp-uga/team-dragora-p1/blob/master/LICENSE) file for details
