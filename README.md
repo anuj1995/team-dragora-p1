@@ -16,3 +16,17 @@ This project uses data from the Microsoft Malware Classification Challenge, whic
 Documents are in the heaxadecimal format.  
 
 ## Getting Started 
+
+
+## Authors
+(Ordered alphabetically)
+
+- **Anuj Panchmia** - 
+- **Sumer Singh** - 
+- **Vishakha Atole** - 
+
+See the [CONTRIBUTORS]() file for details.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md]() file for details
