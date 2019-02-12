@@ -21,7 +21,6 @@ The following instructions will assist you get this project running on your loca
 
 ### Prerequisites
 - [Google Cloud Platform](https://cloud.google.com/)
-
 - [Apache Spark](http://spark.apache.org/)
 
 
