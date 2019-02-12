@@ -25,7 +25,7 @@ Documents are in the heaxadecimal format.
 - **Sumer Singh** - 
 - **Vishakha Atole** - 
 
-See the [CONTRIBUTORS]() file for details.
+See the [CONTRIBUTORS](https://github.com/dsp-uga/team-dragora-p1/blob/master/CONTRIBUTORS.md) file for details.
 
 ## License
 
