@@ -37,9 +37,9 @@ The following instructions will assist you get this project running on your loca
 ## Authors
 (Ordered alphabetically)
 
-- **Anuj Panchmia** - [anuj1995](https://github.com/anuj1995)
-- **Sumer Singh** - [srs96](https://github.com/srs96)
-- **Vishakha Atole** - [vishcocity](https://github.com/vishcocity)
+- **Anuj Panchmia** 
+- **Sumer Singh** 
+- **Vishakha Atole**
 
 See the [CONTRIBUTORS.md](https://github.com/dsp-uga/team-dragora-p1/blob/master/CONTRIBUTORS.md) file for details.
 
