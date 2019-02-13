@@ -6,7 +6,7 @@ This project uses data from the Microsoft Malware Classification Challenge, whic
 
 We built a Random Forest classifier which achieves an accuracy of 99.0077%.
 
-Please refer to the Wiki for more details on our approach.
+Please refer to the [Wiki](https://github.com/dsp-uga/team-dragora-p1/wiki) for more details on our approach.
 
 ## Getting Started 
 
