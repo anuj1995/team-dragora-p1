@@ -6,6 +6,8 @@ This project uses data from the Microsoft Malware Classification Challenge, whic
 
 We built a Random Forest classifier which achieves an accuracy of 99.0077%.
 
+Please refer to the Wiki for more details on our approach.
+
 ## Getting Started 
 
 The following instructions will assist you get this project running on your local machine for developing and testing purpose.
