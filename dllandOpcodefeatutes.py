@@ -15,15 +15,19 @@ from pyspark.ml.classification import DecisionTreeClassifier
 from pyspark.ml.feature import StringIndexer, VectorIndexer, VectorAssembler
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 import copy
+from pyspark.sql import SparkSession
+
 
 conf = (SparkConf()
          .setMaster("yarn")
          .setAppName("asm_features_spark")
          .set('spark.executor.memory', '10G')
          .set('spark.driver.memory', '20G')
-         .set('spark.executor.cores', '4')
+         .set('spark.executor.cores', '3')
+         .set('spark.num.executors', '5')
          )
 sc = SparkContext(conf = conf)
+spark = SparkSession.builder.appName('asm_features_spark').getOrCreate()
 
 def getWordCount(filename):
     #url = "gs://uga-dsp/project1/data/asm/" + filename +".asm"
@@ -65,7 +69,7 @@ train_label_file_list = requests.get(url2).text
 train_label_file_list = train_label_file_list.split()
 
 #taking the opcode list and broadcasting it
-url3 = "hdfs://cluster-b24c-m/user/op.txt"
+url3 = sys.argv[1]
 opcode_list = sc.textFile(url3)
 opcode_list = opcode_list.flatMap(lambda line: line.lower().split()).collect()
 broadcast_opcode_list = sc.broadcast(opcode_list)
@@ -114,8 +118,10 @@ exploded_df = interdf.select("labelname","filename", explode(interdf['counts']).
 test_exploded_df = exploded_df.fillna(0)
 test_final_df = final_df.join(test_exploded_df, final_df.filename == test_exploded_df.filename).drop("filename")
 test_columns = test_final_df.columns[1:]
+
 for x in test_columns:
     train_columns.remove(x)
+
 cols = ["*"] + [lit(None).cast("int").alias(feature) for feature in train_columns]
 temp = test_final_df.select(cols)
 test_final_df = temp.fillna(0)
@@ -124,6 +130,7 @@ test_final_df = temp.fillna(0)
 #removing the "." from the column names
 oldColumns = train_final_df.schema.names
 newColumns =list()
+
 for i in oldColumns:
     newColumns.append(i.replace(".",""))
 
@@ -132,7 +139,9 @@ test_final_df = test_final_df.toDF(*newColumns)
 
 # randon forrest classifier ##############################################################################
 assembler = VectorAssembler(inputCols=train_final_df.columns[1:], outputCol="features")
+output = assembler.transform(train_final_df)
 dt = DecisionTreeClassifier(labelCol="labelname", featuresCol="features")
-pipeline = Pipeline(stages=[assembler, dt])
-model = pipeline.fit(train_final_df)
+pipeline = Pipeline(stages=[output, dt])
+model = pipeline.fit(output)
 predictions = model.transform(test_final_df)
+predictions.select("prediction", "probability", "features").show(5)
