@@ -214,7 +214,6 @@ def set_parameters(arg_list):
     '''Selects the dataset and features used. 
     Defaults to large dataset, all features used, 40 trees and 23 max depth.
     '''
-    print(sys.argv)
     dataset ='l'
     features_used = '11'
     num_trees = 40
@@ -264,7 +263,6 @@ def main():
         X_train_path = 'https://storage.googleapis.com/uga-dsp/project1/files/X_small_train.txt'
         X_test_path = 'https://storage.googleapis.com/uga-dsp/project1/files/X_small_test.txt'
         y_path = 'https://storage.googleapis.com/uga-dsp/project1/files/y_small_train.txt'
-    print(X_train_path)
     #Creating a list of y labels
     y_train = get_labels(y_path)
     
