@@ -37,8 +37,7 @@ Number of trees - Any integer larger than 1. Default: ```40```
 
 Maximum Depth - Any integer between 1 and 30 (inclusive). Default: ```23```
 
-**The prediction will be saved to disk in the same directory and named ```submit<num_trees><max_depth>.txt``` where num_trees is the number of trees and max_depth is the maximum depth.
-By default it will be saved as ```submit4023.txt```
+**The prediction will be saved to disk in the current directory and named** ```submit<num_trees><max_depth>.txt``` **where num_trees is the number of trees and max_depth is the maximum depth. By default it will be saved as** ```submit4023.txt```
 
 
 
