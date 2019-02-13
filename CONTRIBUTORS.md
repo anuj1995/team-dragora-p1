@@ -9,9 +9,12 @@
     - Updated the wiki page
 
 - **Sumer Singh** - [srs96](https://github.com/srs96)
-   -
-   -
 
+   - Extracted byte count features (from .byte file)
+   - Extracted header count features (from .asm file)
+   - Parameter tuning and accuracy testing for the Random Forest Classifier
+   - Updated the readme
+   - Updated the wiki
 
 - **Vishakha Atole** - [vishcocity](https://github.com/vishcocity)
    -
