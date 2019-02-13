@@ -19,13 +19,13 @@ The following instructions will assist you get this project running on your loca
 
 ### Running the tests:
 
-Run the random forest classifier. The data is automatically pulled from the internet. 
+Run the random forest classifier. The data is automatically pulled from the internet. Byte count or Header count features can be selected (or both).
 ```
 $ python low_mem_rf.py [Dataset] [Features] [Number of trees] [Maximum depth]
 ```
 OR
 ```
-$spark-submit low_mem_rf.py [Dataset] [Features] [Number of trees] [Maximum depth]
+$ spark-submit low_mem_rf.py [Dataset] [Features] [Number of trees] [Maximum depth]
 ```
 All parameters are optional.
 
