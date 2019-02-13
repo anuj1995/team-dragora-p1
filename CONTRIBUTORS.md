@@ -17,6 +17,9 @@
    - Updated the wiki
 
 - **Vishakha Atole** - [vishcocity](https://github.com/vishcocity)
-   -
-   -
+
+   - Create dthe repo
+   - Extracted the opcode count features (from .asm file)
+   - Updated the readme
+   - Updated the wiki
 
