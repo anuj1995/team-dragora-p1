@@ -26,9 +26,9 @@ Each X* contains a list of hashes, one per line. Each corresponding y* file is a
 The following instructions will assist you get this project running on your local machine for developing and testing purpose.
 
 ### Prerequisites:
-- [Google Cloud Platform](https://cloud.google.com/)
 - [Apache Spark 2.3.2](https://spark.apache.org/releases/spark-release-2-3-2.html)
 - [Python 3.7.2](https://www.python.org/downloads/release/python-372/)
+- [Anaconda 4.6.1](https://www.anaconda.com/distribution/)
 
 ### Installation:
 
