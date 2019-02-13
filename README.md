@@ -30,9 +30,13 @@ The following instructions will assist you get this project running on your loca
 - [Python 3.7.2](https://www.python.org/downloads/release/python-372/)
 - [Anaconda](https://www.anaconda.com/distribution/)
 
-### Installation:
+### Running the tests:
 
-### Usage:
+### Feature Extraction
+
+### Classifier
+
+### Results
 
 
 ## Authors
