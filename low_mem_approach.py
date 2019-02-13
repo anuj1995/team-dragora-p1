@@ -138,7 +138,6 @@ def get_byte_features(X, file_list, index, appeared, test_flag):
                         #For an already seen byte, we get that byte's index.
                         #And then increment the value at that index.
                         X[file_index][appeared[byte]] += 1
-
     return X, index, appeared
 
 def get_asm_features(X, file_list, index, appeared, test_flag):
@@ -174,7 +173,6 @@ def get_asm_features(X, file_list, index, appeared, test_flag):
             #And then increment the value at that index.
             else:
                 X[file_index][appeared[header]] += 1
-
     return X, index, appeared
 
 def get_labels(y_path):
@@ -197,30 +195,30 @@ def create_training_matrix(X_train, y_train):
         data.append(LabeledPoint(y_train[i], X_train[i]))
     return data
 
-def predict_and_save(sc, train_data, X_test, num_trees_range=[40, 41], max_depth_range=[30, 31]):
+def predict_and_save(sc, train_data, X_test, num_trees, max_depth):
     '''Trains a Random Forest classifier.
     Loops over different values of trees and max depth.
     '''
-    for trees in range(num_trees_range[0], num_trees_range[1]):
-        for depth in range(max_depth_range[0], max_depth_range[1]):
-            model = RandomForest.trainClassifier(sc.parallelize(train_data), 9, {}, trees, maxDepth = depth)
-            a = []
-            for i in X_test:
-                 a.append(int(model.predict(i) + 1))
-            trees_s = str(trees)
-            depth_s = str(depth)
-            string = 'submit' + trees_s + depth_s + '.txt'
-            b = pd.DataFrame(a)
-            b.to_csv(string, header = False, index = False)
+    model = RandomForest.trainClassifier(sc.parallelize(train_data), 9, {}, num_trees,  maxDepth = max_depth)
+    a = []
+    for i in X_test:
+         a.append(int(model.predict(i) + 1))
+    trees_s = str(num_trees)
+    depth_s = str(max_depth)
+    string = 'submit' + trees_s + depth_s + '.txt'
+    b = pd.DataFrame(a)
+    b.to_csv(string, header = False, index = False)
 
 
 def set_parameters(arg_list):
     '''Selects the dataset and features used. 
-    Defaults to large dataset and all features used.
+    Defaults to large dataset, all features used, 40 trees and 23 max depth.
     '''
     print(sys.argv)
     dataset ='l'
     features_used = '11'
+    num_trees = 40
+    max_depth = 23
     if len(sys.argv) >= 2:
         dataset = sys.argv[1]
         if dataset != 'l' and dataset != 's':
@@ -229,11 +227,25 @@ def set_parameters(arg_list):
         features_used = sys.argv[2]
         if features_used != '00' and features_used != '01' and features_used != '10' and features_used != '11':
             features_used = '11'
-    return dataset, features_used
+    if len(sys.argv) >= 4:
+        num_trees = sys.argv[3]
+        if type(num_trees) != int:
+            num_trees == 40
+        #Trees must be positve
+        num_trees = max(1, int(sys.argv[3]))
+    if len(sys.argv) >= 5:
+        max_depth = sys.argv[4]
+        if type(max_depth) != int:
+            max_depth == 23
+        #Max depth must lie between 1 - 30
+        max_depth = min(max(1, int(sys.argv[4])), 30)
+
+
+    return dataset, features_used, num_trees, max_depth
 
 def main():
 
-    dataset, features_used = set_parameters(sys.argv)
+    dataset, features_used, num_trees, max_depth = set_parameters(sys.argv)
 
 
     #Default to use all features in case of invalid parameters.
@@ -267,7 +279,7 @@ def main():
     train_data = create_training_matrix(X_train, y_train)
     
     #Passing training data to the model and outputing prediction
-    predict_and_save(sc, train_data, X_test)
+    predict_and_save(sc, train_data, X_test, num_trees, max_depth)
 
 
 if __name__ == "__main__":
