@@ -229,14 +229,10 @@ def set_parameters(arg_list):
             features_used = '11'
     if len(sys.argv) >= 4:
         num_trees = sys.argv[3]
-        if type(num_trees) != int:
-            num_trees == 40
         #Trees must be positve
         num_trees = max(1, int(sys.argv[3]))
     if len(sys.argv) >= 5:
         max_depth = sys.argv[4]
-        if type(max_depth) != int:
-            max_depth == 23
         #Max depth must lie between 1 - 30
         max_depth = min(max(1, int(sys.argv[4])), 30)
 
